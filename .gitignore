@@ -1,2 +1,4 @@
 .idea
 chromdriver
+.gradle
+build
