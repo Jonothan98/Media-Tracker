@@ -1,6 +1,6 @@
 package com.mediatracker.view;
 
-public class LandingView extends TrackerView{
+public class LandingView extends TrackerView implements LandingViewCalibratable {
 
     public static final String RELATIVE_URI = "";
     public static final String LOCATOR_VALUE = "landing-title";
@@ -13,6 +13,7 @@ public class LandingView extends TrackerView{
         return new LandingView(relativeUri);
     }
 
+    @Override
     public String getTitle() {
         return getElementById(LOCATOR_VALUE).getText();
     }
