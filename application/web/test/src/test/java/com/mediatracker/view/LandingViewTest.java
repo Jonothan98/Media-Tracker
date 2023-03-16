@@ -6,9 +6,12 @@ import static org.testng.Assert.assertEquals;
 
 public class LandingViewTest {
     @Test
-    public void smoke(){
+    public void smoke() {
         String expected = LandingViewExpected.getInstance().getTitle();
-        String actual = LandingView.getInstance("/").getTitle();
-        assertEquals(actual,expected);
+        LandingView landingView = LandingView.getInstance("/");
+        String actual = landingView.getTitle();
+        landingView.closeDriver();
+
+        assertEquals(actual, expected);
     }
 }

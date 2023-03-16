@@ -6,6 +6,6 @@ public class LandingViewExpected {
     }
 
     public String getTitle() {
-        return "Landing";
+        return "Welcome to Media Tracker";
     }
 }

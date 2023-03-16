@@ -23,4 +23,8 @@ public abstract class TrackerView {
     protected WebElement getElementById(String locator_value){
         return webDriver.findElement(By.id(locator_value));
     }
+
+    protected void closeDriver(){
+        webDriver.quit();
+    }
 }

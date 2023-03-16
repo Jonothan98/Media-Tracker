@@ -1,11 +1,9 @@
 package com.mediatracker.view;
 
-import org.openqa.selenium.By;
-
 public class LandingView extends TrackerView{
 
     public static final String RELATIVE_URI = "";
-    public static final String TITLE = "Landing";
+    public static final String LOCATOR_VALUE = "landing-title";
 
     public LandingView(String relativeUri) {
         super(RELATIVE_URI);
@@ -16,6 +14,6 @@ public class LandingView extends TrackerView{
     }
 
     public String getTitle() {
-        return getElementById(TITLE).getText();
+        return getElementById(LOCATOR_VALUE).getText();
     }
 }
