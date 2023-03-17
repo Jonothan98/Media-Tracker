@@ -1,5 +1,7 @@
 package com.mediatracker.view;
 
+import org.openqa.selenium.WebElement;
+
 public class LandingView extends TrackerView implements LandingViewCalibratable {
 
     public static final String RELATIVE_URI = "";
@@ -14,7 +16,7 @@ public class LandingView extends TrackerView implements LandingViewCalibratable 
         return new LandingView(RELATIVE_URI);
     }
     public static LandingView getInstance(String relativeUri){
-        return new LandingView(String.format("%s/?user_id=%s", relativeUri, relativeUri));
+        return new LandingView(String.format("?user_id=%s", relativeUri));
     }
 
     @Override
@@ -25,13 +27,20 @@ public class LandingView extends TrackerView implements LandingViewCalibratable 
 
     @Override
     public String getUserImage() {
-        String locatorValue = "image-url";
-        return getElementById(locatorValue).getText();
+        String locatorValue = "//*[@id=\"image-url\"]";
+        WebElement imageElement = getElementByXpath(locatorValue);
+        return imageElement.getAttribute("src");
     }
 
     @Override
     public String getUserTotalCompleted() {
         String locatorValue = "total-shows-completed";
+        return getElementById(locatorValue).getText();
+    }
+
+    @Override
+    public String getUserName() {
+        String locatorValue = "user-name";
         return getElementById(locatorValue).getText();
     }
 }

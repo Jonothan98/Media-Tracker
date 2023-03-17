@@ -25,17 +25,22 @@ public class LandingViewExpected implements LandingViewCalibratable {
 
     @Override
     public String getUserImage() {
-        return user.getIMAGE_URL();
+        return user.getImageUrl();
     }
 
     @Override
     public String getUserTotalCompleted() {
         int totalComplete = 0;
-        for (Show show : User.getInstance().getSHOW_LIST()) {
-            if(show.getSHOW_STATUS() == "Completed"){
+        for (Show show : user.getShowList()) {
+            if("Completed".equals(show.getStatus())){
                 totalComplete++;
             }
         }
-        return String.valueOf(totalComplete);
+        return String.format("Shows Completed: %d", totalComplete);
+    }
+
+    @Override
+    public String getUserName() {
+        return String.format("Welcome, %s", user.getName() );
     }
 }

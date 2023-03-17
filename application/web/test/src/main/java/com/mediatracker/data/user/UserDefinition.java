@@ -5,37 +5,34 @@ import com.mediatracker.data.show.Show;
 import java.util.List;
 
 public class UserDefinition {
-    private int USER_ID;
-    private String IMAGE_URL;
-    private List<Show> SHOW_LIST;
+    private int id;
+    private String name;
 
-    public UserDefinition(int USER_ID, String IMAGE_URL, List<Show> SHOW_LIST) {
-        this.USER_ID = USER_ID;
-        this.IMAGE_URL = IMAGE_URL;
-        this.SHOW_LIST = SHOW_LIST;
-    }
-    public String getIMAGE_URL() {
-        return IMAGE_URL;
-    }
 
-    public void setIMAGE_URL(String IMAGE_URL) {
-        this.IMAGE_URL = IMAGE_URL;
+    private String imageUrl;
+    private List<Show> showList;
+
+    public UserDefinition(int id, String name, String imageUrl, List<Show> showList) {
+        this.id = id;
+        this.name = name;
+        this.imageUrl = imageUrl;
+        this.showList = showList;
     }
 
-    public int getUSER_ID() {
-        return USER_ID;
+    public String getImageUrl() {
+        return imageUrl;
     }
 
-    public void setUSER_ID(int USER_ID) {
-        this.USER_ID = USER_ID;
+    public String getName() {
+        return name;
     }
 
-    public List<Show> getSHOW_LIST() {
-        return SHOW_LIST;
+    public int getId() {
+        return id;
     }
 
-    public void setSHOW_LIST(List<Show> SHOW_LIST) {
-        this.SHOW_LIST = SHOW_LIST;
+    public List<Show> getShowList() {
+        return showList;
     }
 
 }

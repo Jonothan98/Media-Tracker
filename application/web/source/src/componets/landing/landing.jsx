@@ -1,9 +1,13 @@
-import React from 'react'
+import React from "react";
+import UserInfo from "./UserInfo";
 
 function landing() {
   return (
-    <div id='landing-title'>Welcome to Media Tracker</div>
-  )
+    <div>
+      <h2 id="landing-title">Welcome to Media Tracker</h2>
+      <UserInfo />
+    </div>
+  );
 }
 
-export default landing
+export default landing;

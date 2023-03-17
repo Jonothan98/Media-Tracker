@@ -2,56 +2,56 @@ package com.mediatracker.data.show;
 
 public class ShowDefinition {
 
-    private int SHOW_ID;
-    private String TITLE;
-    private int TOTAL_EPISODES;
-    private int CURRENT_EPISODE;
-    private String SHOW_STATUS;
+    private int id;
+    private String title;
+    private int totalEpisodes;
+    private int currentEpisode;
+    private String status;
 
-    public ShowDefinition(int SHOW_ID, String TITLE, int TOTAL_EPISODES, int CURRENT_EPISODE, String SHOW_STATUS) {
-        this.SHOW_ID = SHOW_ID;
-        this.TITLE = TITLE;
-        this.TOTAL_EPISODES = TOTAL_EPISODES;
-        this.CURRENT_EPISODE = CURRENT_EPISODE;
-        this.SHOW_STATUS = SHOW_STATUS;
+    public ShowDefinition(int id, String title, int totalEpisodes, int currentEpisode, String status) {
+        this.id = id;
+        this.title = title;
+        this.totalEpisodes = totalEpisodes;
+        this.currentEpisode = currentEpisode;
+        this.status = status;
     }
-    public int getSHOW_ID() {
-        return SHOW_ID;
-    }
-
-    public void setSHOW_ID(int SHOW_ID) {
-        this.SHOW_ID = SHOW_ID;
+    public int getId() {
+        return id;
     }
 
-    public String getTITLE() {
-        return TITLE;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public void setTITLE(String TITLE) {
-        this.TITLE = TITLE;
+    public String getTitle() {
+        return title;
     }
 
-    public int getTOTAL_EPISODES() {
-        return TOTAL_EPISODES;
+    public void setTitle(String title) {
+        this.title = title;
     }
 
-    public void setTOTAL_EPISODES(int TOTAL_EPISODES) {
-        this.TOTAL_EPISODES = TOTAL_EPISODES;
+    public int getTotalEpisodes() {
+        return totalEpisodes;
     }
 
-    public int getCURRENT_EPISODE() {
-        return CURRENT_EPISODE;
+    public void setTotalEpisodes(int totalEpisodes) {
+        this.totalEpisodes = totalEpisodes;
     }
 
-    public void setCURRENT_EPISODE(int CURRENT_EPISODE) {
-        this.CURRENT_EPISODE = CURRENT_EPISODE;
+    public int getCurrentEpisode() {
+        return currentEpisode;
     }
 
-    public String getSHOW_STATUS() {
-        return SHOW_STATUS;
+    public void setCurrentEpisode(int currentEpisode) {
+        this.currentEpisode = currentEpisode;
     }
 
-    public void setSHOW_STATUS(String SHOW_STATUS) {
-        this.SHOW_STATUS = SHOW_STATUS;
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 }

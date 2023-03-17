@@ -24,22 +24,29 @@ public class LandingViewTest {
 
     @Test
     public void userInfoIsDisplayed() {
-        ShowDefinition showDefinition = new ShowDefinition(1, "Last of Us", 9, 4, "Currently Watching");
+        ShowDefinition showDefinition = new ShowDefinition(1, "Last of Us", 9, 4, "on going");
         Show show = Show.getInstance(showDefinition);
+
         List<Show> showList = new ArrayList<>();
         showList.add(show);
-        UserDefinition userDefinition = new UserDefinition(1, "https://cdn-icons-png.flaticon.com/512/3135/3135715.png", showList);
+
+        UserDefinition userDefinition = new UserDefinition(1, "Jimmy", "https://cdn-icons-png.flaticon.com/512/3135/3135715.png", showList);
         User user = User.getInstance(userDefinition);
+
         LandingViewExpected landingViewExpected = LandingViewExpected.getInstance(user);
-        LandingView landingView = LandingView.getInstance(String.valueOf(user.getUSER_ID()));
+        LandingView landingView = LandingView.getInstance(String.valueOf(user));
+
+        String expectedUserName = landingViewExpected.getUserName();
+        String actualUserName = landingView.getUserName();
+        assertEquals(actualUserName, expectedUserName);
 
         String expectedUserImage = landingViewExpected.getUserImage();
         String actualUserImage = landingView.getUserImage();
-        assertEquals(actualUserImage, expectedUserImage);
+        assertEquals(actualUserImage,expectedUserImage);
 
-        String expectedShowsCompleted = landingViewExpected.getUserTotalCompleted();
-        String actualShowsCompleted = landingView.getUserTotalCompleted();
+        String expectedUserTotalCompleted = landingViewExpected.getUserTotalCompleted();
+        String actualUserTotalCompleted = landingView.getUserTotalCompleted();
         landingView.closeDriver();
-        assertEquals(actualShowsCompleted, expectedShowsCompleted);
+        assertEquals(actualUserTotalCompleted,expectedUserTotalCompleted);
     }
 }

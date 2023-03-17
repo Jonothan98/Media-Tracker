@@ -1,18 +1,18 @@
 package com.mediatracker.data.show;
 
 public class Show {
-    private final int SHOW_ID;
-    private final String TITLE;
-    private final int TOTAL_EPISODES;
-    private final int CURRENT_EPISODE;
-    private final String SHOW_STATUS;
+    private final int id;
+    private final String title;
+    private final int totalEpisodes;
+    private final int currentEpisode;
+    private final String status;
 
     private Show(ShowDefinition showDefinition) {
-        SHOW_ID = showDefinition.getSHOW_ID();
-        TITLE = showDefinition.getTITLE();
-        TOTAL_EPISODES = showDefinition.getTOTAL_EPISODES();
-        CURRENT_EPISODE = showDefinition.getCURRENT_EPISODE();
-        SHOW_STATUS = showDefinition.getSHOW_STATUS();
+        id = showDefinition.getId();
+        title = showDefinition.getTitle();
+        totalEpisodes = showDefinition.getTotalEpisodes();
+        currentEpisode = showDefinition.getCurrentEpisode();
+        status = showDefinition.getStatus();
     }
 
     public static Show getInstance(){
@@ -22,23 +22,23 @@ public class Show {
         return new Show(showDefinition);
     }
 
-    public int getSHOW_ID() {
-        return SHOW_ID;
+    public int getId() {
+        return id;
     }
 
-    public String getTITLE() {
-        return TITLE;
+    public String getTitle() {
+        return title;
     }
 
-    public int getTOTAL_EPISODES() {
-        return TOTAL_EPISODES;
+    public int getTotalEpisodes() {
+        return totalEpisodes;
     }
 
-    public int getCURRENT_EPISODE() {
-        return CURRENT_EPISODE;
+    public int getCurrentEpisode() {
+        return currentEpisode;
     }
 
-    public String getSHOW_STATUS() {
-        return SHOW_STATUS;
+    public String getStatus() {
+        return status;
     }
 }

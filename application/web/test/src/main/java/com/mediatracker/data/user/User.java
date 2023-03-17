@@ -6,14 +6,17 @@ import java.util.List;
 
 public class User {
 
-    private final int USER_ID;
-    private final String IMAGE_URL;
-    private final List<Show> SHOW_LIST;
+    private final int id;
+
+    private final String name;
+    private final String imageUrl;
+    private final List<Show> showList;
 
     private User(UserDefinition userDefinition) {
-        USER_ID = userDefinition.getUSER_ID();
-        IMAGE_URL = userDefinition.getIMAGE_URL();
-        SHOW_LIST = userDefinition.getSHOW_LIST();
+        id = userDefinition.getId();
+        imageUrl = userDefinition.getImageUrl();
+        showList = userDefinition.getShowList();
+        name = userDefinition.getName();
     }
 
     public static User getInstance() {
@@ -23,15 +26,19 @@ public class User {
         return new User(userDefinition);
     }
 
-    public int getUSER_ID() {
-        return USER_ID;
+    public int getId() {
+        return id;
     }
 
-    public String getIMAGE_URL() {
-        return IMAGE_URL;
+    public String getImageUrl() {
+        return imageUrl;
     }
 
-    public List<Show> getSHOW_LIST() {
-        return SHOW_LIST;
+    public List<Show> getShowList() {
+        return showList;
+    }
+
+    public String getName() {
+        return name;
     }
 }
