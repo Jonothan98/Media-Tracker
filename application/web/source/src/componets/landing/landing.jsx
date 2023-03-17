@@ -1,7 +1,8 @@
 import React from "react";
-import UserInfo from "./UserInfo";
+import UserInfo from "./userInfo/UserInfo";
+import "./landing.css";
 
-function landing() {
+function Landing() {
   return (
     <div>
       <h2 id="landing-title">Welcome to Media Tracker</h2>
@@ -10,4 +11,4 @@ function landing() {
   );
 }
 
-export default landing;
+export default Landing;
