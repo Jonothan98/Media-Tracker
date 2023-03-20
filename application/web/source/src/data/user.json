@@ -1,5 +1,26 @@
 [
     {
+        "id": 0,
+        "name": "New User",
+        "image_url": "https://cdn-icons-png.flaticon.com/512/3135/3135715.png",
+        "showList": [
+            {
+                "id": 1,
+                "name": "Last of Us",
+                "total_episodes": 9,
+                "current_episode": 4,
+                "status": "on going"
+            },
+            {
+                "id": 2,
+                "name": "House of the Dragon",
+                "total_episodes": 10,
+                "current_episode": 1,
+                "status": "on going"
+            }
+        ]
+    },
+    {
         "id": 1,
         "name": "Jimmy",
         "image_url": "https://cdn-icons-png.flaticon.com/512/3135/3135715.png",
@@ -29,8 +50,8 @@
                 "id": 1,
                 "name": "Last of Us",
                 "total_episodes": 9,
-                "current_episode": 4,
-                "status": "on going"
+                "current_episode": 9,
+                "status": "completed"
             }
         ]
     }

@@ -34,7 +34,7 @@ public class LandingViewTest {
         User user = User.getInstance(userDefinition);
 
         LandingViewExpected landingViewExpected = LandingViewExpected.getInstance(user);
-        LandingView landingView = LandingView.getInstance(String.valueOf(user));
+        LandingView landingView = LandingView.getInstance(String.valueOf(user.getId()));
 
         String expectedUserName = landingViewExpected.getUserName();
         String actualUserName = landingView.getUserName();

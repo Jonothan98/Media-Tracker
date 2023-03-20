@@ -1,10 +1,14 @@
 function getShowsCompleted(showList) {
+  console.log(showList);
   let completedCount = 0;
-  showList.forEach((show) => {
-    if (show.status === "completed") {
-      completedCount++;
-    }
-  });
+
+  if(showList){
+    showList.forEach((show) => {
+      if (show.status === "completed") {
+        completedCount++;
+      }
+    });
+  }
   return completedCount;
 }
 
