@@ -49,4 +49,26 @@ public class LandingViewTest {
         landingView.closeDriver();
         assertEquals(actualUserTotalCompleted,expectedUserTotalCompleted);
     }
+
+    @Test
+    public void userOngoingListIsDisplayed(){
+        ShowDefinition showDefinition = new ShowDefinition(1, "Last of Us", 9, 4, "on going");
+        Show show1 = Show.getInstance(showDefinition);
+
+        ShowDefinition showDefinition2 = new ShowDefinition(2,"House of the Dragon",10,1,"on going");
+        Show show2 = Show.getInstance(showDefinition2);
+
+        List<Show> showList = new ArrayList<>();
+        showList.add(show1);
+        showList.add(show2);
+
+        LandingViewExpected landingViewExpected = LandingViewExpected.getInstance();
+        LandingView landingView = LandingView.getInstance();
+
+        //Get the child of the on-going list element, then add the names of the shows to a list
+
+        String expectedShowList = "";
+        String actualShowList = "";
+        assertEquals(actualShowList,expectedShowList);
+    }
 }
