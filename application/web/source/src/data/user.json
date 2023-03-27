@@ -9,14 +9,16 @@
                 "name": "Last of Us",
                 "total_episodes": 9,
                 "current_episode": 4,
-                "status": "on going"
+                "status": "on going",
+                "image_url": "https://i.imgur.com/nr8zXw0.jpeg"
             },
             {
                 "id": 2,
                 "name": "House of the Dragon",
                 "total_episodes": 10,
                 "current_episode": 1,
-                "status": "on going"
+                "status": "on going",
+                "image_url": "https://i.imgur.com/lqzqw8g.jpeg"
             }
         ]
     },
@@ -30,14 +32,16 @@
                 "name": "Last of Us",
                 "total_episodes": 9,
                 "current_episode": 4,
-                "status": "on going"
+                "status": "on going",
+                "image_url": "https://i.imgur.com/nr8zXw0.jpeg"
             },
             {
                 "id": 2,
                 "name": "House of the Dragon",
                 "total_episodes": 10,
                 "current_episode": 1,
-                "status": "on going"
+                "status": "on going",
+                "image_url": "https://i.imgur.com/lqzqw8g.jpeg"
             }
         ]
     },
@@ -51,7 +55,8 @@
                 "name": "Last of Us",
                 "total_episodes": 9,
                 "current_episode": 9,
-                "status": "completed"
+                "status": "completed",
+                "image_url": "https://i.imgur.com/nr8zXw0.jpeg"
             }
         ]
     }

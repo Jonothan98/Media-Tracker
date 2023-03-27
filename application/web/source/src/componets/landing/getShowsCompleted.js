@@ -1,5 +1,4 @@
 function getShowsCompleted(showList) {
-  console.log(showList);
   let completedCount = 0;
 
   if(showList){

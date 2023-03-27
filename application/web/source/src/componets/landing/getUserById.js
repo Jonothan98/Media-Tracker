@@ -1,13 +1,9 @@
 import userJson from "./../../data/user.json";
 
 export default function getUserById(userId) {
-  console.log(userId);
   if (userId) {
-    for (let user of userJson) {    
-      if (user.id.toString() === userId) {
-        return user;
-      }
-    }
+    const user = userJson.filter((user) => user.id === parseInt(userId))
+    return user[0];
   }
   return userJson[0];
 }

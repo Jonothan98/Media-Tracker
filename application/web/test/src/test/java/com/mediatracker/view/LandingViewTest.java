@@ -62,13 +62,19 @@ public class LandingViewTest {
         showList.add(show1);
         showList.add(show2);
 
-        LandingViewExpected landingViewExpected = LandingViewExpected.getInstance();
+        UserDefinition userDefinition = new UserDefinition(1, "Jimmy", "https://cdn-icons-png.flaticon.com/512/3135/3135715.png", showList);
+        User user = User.getInstance(userDefinition);
+
+        LandingViewExpected landingViewExpected = LandingViewExpected.getInstance(user);
         LandingView landingView = LandingView.getInstance();
 
         //Get the child of the on-going list element, then add the names of the shows to a list
 
-        String expectedShowList = "";
-        String actualShowList = "";
+        List<String> expectedShowList = landingViewExpected.getOnGoingListName();
+        List<String> actualShowList = landingView.getOnGoingListName();
+        System.out.println(expectedShowList);
+        System.out.println(actualShowList);
         assertEquals(actualShowList,expectedShowList);
+        landingView.closeDriver();
     }
 }

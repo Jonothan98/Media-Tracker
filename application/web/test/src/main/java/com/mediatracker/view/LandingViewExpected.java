@@ -3,6 +3,9 @@ package com.mediatracker.view;
 import com.mediatracker.data.show.Show;
 import com.mediatracker.data.user.User;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class LandingViewExpected implements LandingViewCalibratable {
     private final User user;
 
@@ -42,5 +45,14 @@ public class LandingViewExpected implements LandingViewCalibratable {
     @Override
     public String getUserName() {
         return String.format("Welcome, %s", user.getName() );
+    }
+
+    @Override
+    public List<String> getOnGoingListName() {
+        List<String> showNames = new ArrayList<>();
+        for(Show show : user.getShowList()){
+            showNames.add(show.getTitle());
+        }
+        return showNames;
     }
 }

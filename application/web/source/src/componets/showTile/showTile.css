@@ -1,0 +1,15 @@
+.tile-container{
+    padding-left: 10px;
+    display: flex;
+    flex-direction: row;
+}
+
+.tile-image{
+    width: 100px;
+    height: 150px;
+    border-radius: 10%;
+}
+
+.tile-name{
+    font-size: small;
+}

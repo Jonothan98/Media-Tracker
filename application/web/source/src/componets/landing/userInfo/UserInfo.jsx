@@ -1,28 +1,27 @@
 import React, { useEffect, useState } from "react";
 import getShowsCompleted from "../getShowsCompleted";
-import getUserById from "./../getUserById";
+import getUserById from "../getUserById";
+import getParams from "../../../getParams";
 import "./userInfo.css";
 
-function UserInfo(userId) {
-  const [user, setUserInfo] = useState({});
+function UserInfo() {
+  const [user, setUser] = useState({});
 
   useEffect(() => {
-    const newUserId = userId.userId;
-    setUserInfo(getUserById(newUserId));
-    console.log(user);
-  }, [userId,user]);
-
+    setUser(getUserById(getParams("user_id")));
+  }, []);
   return (
-    <div className="info-body">
-      <div className="info-container">
+    <div className="container border rounded">
+      <div>
         <img
           id="image-url"
+          className="img-circle row"
           src={user.image_url}
           alt="User Profile"
           title="UserImage"
         />
-        <h1 id="user-name">{`Welcome, ${user.name}`}</h1>
-        <p id="total-shows-completed">
+        <h1 id="user-name" className="row align-text-center">{`Welcome, ${user.name}`}</h1>
+        <p id="total-shows-completed" className="row align-text-center">
           {`Shows Completed: ${getShowsCompleted(user.showList)}`}
         </p>
       </div>
