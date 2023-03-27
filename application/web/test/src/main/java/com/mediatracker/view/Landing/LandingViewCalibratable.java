@@ -1,4 +1,4 @@
-package com.mediatracker.view;
+package com.mediatracker.view.Landing;
 
 import java.util.List;
 

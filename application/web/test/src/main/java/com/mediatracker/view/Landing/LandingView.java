@@ -1,5 +1,6 @@
-package com.mediatracker.view;
+package com.mediatracker.view.Landing;
 
+import com.mediatracker.view.TrackerView;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 

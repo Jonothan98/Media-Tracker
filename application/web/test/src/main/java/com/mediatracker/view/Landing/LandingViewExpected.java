@@ -1,4 +1,4 @@
-package com.mediatracker.view;
+package com.mediatracker.view.Landing;
 
 import com.mediatracker.data.show.Show;
 import com.mediatracker.data.user.User;

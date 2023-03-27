@@ -4,6 +4,8 @@ import com.mediatracker.data.show.Show;
 import com.mediatracker.data.show.ShowDefinition;
 import com.mediatracker.data.user.User;
 import com.mediatracker.data.user.UserDefinition;
+import com.mediatracker.view.Landing.LandingView;
+import com.mediatracker.view.Landing.LandingViewExpected;
 import org.testng.annotations.Test;
 
 import java.util.ArrayList;
