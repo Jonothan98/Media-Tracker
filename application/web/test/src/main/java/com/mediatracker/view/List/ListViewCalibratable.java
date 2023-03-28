@@ -6,4 +6,5 @@ public interface ListViewCalibratable {
     String getTitle();
 
     List<String> getStatusOptions();
+    List<String> getOnGoingList();
 }

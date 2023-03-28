@@ -19,6 +19,10 @@ public class ListView extends TrackerView implements ListViewCalibratable {
         return new ListView(RELATIVE_URI);
     }
 
+    public static ListView getInstance(String userId) {
+        return new ListView(String.format("%s?user_id=%s", RELATIVE_URI, userId));
+    }
+
     @Override
     public String getTitle() {
         return getElementById("show-list").getText();
@@ -29,10 +33,22 @@ public class ListView extends TrackerView implements ListViewCalibratable {
         List<String> statusOptions = new ArrayList<>();
         String locatorValue = "status-options";
         WebElement options = getElementById(locatorValue);
-        List<WebElement> childElements = options.findElements(By.xpath("./child::*"));
-        for(WebElement status: childElements){
+        List<WebElement> childElements = options.findElements(By.name("options"));
+        for (WebElement status : childElements) {
             statusOptions.add(status.getText());
         }
         return statusOptions;
+    }
+
+    @Override
+    public List<String> getOnGoingList() {
+        List<String> onGoingNames = new ArrayList<>();
+        String locatorValue = "on-going-list";
+        WebElement list = getElementById(locatorValue);
+        List<WebElement> childElements = list.findElements(By.id("on-going"));
+        for(WebElement show: childElements){
+            onGoingNames.add(show.getText());
+        }
+        return onGoingNames;
     }
 }

@@ -74,8 +74,6 @@ public class LandingViewTest {
 
         List<String> expectedShowList = landingViewExpected.getOnGoingListName();
         List<String> actualShowList = landingView.getOnGoingListName();
-        System.out.println(expectedShowList);
-        System.out.println(actualShowList);
         assertEquals(actualShowList,expectedShowList);
         landingView.closeDriver();
     }
