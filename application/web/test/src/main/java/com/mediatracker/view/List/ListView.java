@@ -45,7 +45,7 @@ public class ListView extends TrackerView implements ListViewCalibratable {
         List<String> onGoingNames = new ArrayList<>();
         String locatorValue = "on-going-list";
         WebElement list = getElementById(locatorValue);
-        List<WebElement> childElements = list.findElements(By.id("on-going"));
+        List<WebElement> childElements = list.findElements(By.xpath("./child::*"));
         for(WebElement show: childElements){
             onGoingNames.add(show.getText());
         }

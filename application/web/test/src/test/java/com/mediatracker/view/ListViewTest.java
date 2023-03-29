@@ -57,6 +57,7 @@ public class ListViewTest {
 
         List<String> expected = listViewExpected.getOnGoingList();
         List<String> actual = listView.getOnGoingList();
+        listView.closeDriver();
         assertEquals(actual,expected);
     }
 

@@ -1,7 +1,7 @@
 import React from "react";
 import UserInfo from "./userInfo/UserInfo";
 import "./landing.css";
-import OnGoingList from "./onGoingList/OnGoingList";
+import FilteredList from "../filteredList/FilteredList";
 
 function Landing() {
   return (
@@ -13,7 +13,7 @@ function Landing() {
         </div>
         <div className="col">
           <h1>Shows in Progress</h1>
-          <OnGoingList />
+          <FilteredList status="on going" />
         </div>
       </div>
     </div>
