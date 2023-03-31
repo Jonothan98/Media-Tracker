@@ -9,6 +9,7 @@ function ShowTile({show}) {
   return <div className="container">
     <img className="tile-image" src={showData.image_url} alt="Show Poster"/>
     <h1 className="tile-name">{showData.name}</h1>
+    <p className="tile-episodes">{`Episodes: ${showData.current_episode}/${showData.total_episodes}`}</p>
   </div>;
 }
 

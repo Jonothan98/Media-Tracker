@@ -59,5 +59,44 @@
                 "image_url": "https://i.imgur.com/nr8zXw0.jpeg"
             }
         ]
+    },
+    {
+        "id": 3,
+        "name": "AllStatus",
+        "image_url": "https://cdn-icons-png.flaticon.com/512/3135/3135715.png",
+        "showList": [
+            {
+                "id": 1,
+                "name": "Last of Us",
+                "total_episodes": 9,
+                "current_episode": 7,
+                "status": "on going",
+                "image_url": "https://i.imgur.com/nr8zXw0.jpeg"
+            },
+            {
+                "id": 2,
+                "name": "House of the Dragon",
+                "total_episodes": 9,
+                "current_episode": 9,
+                "status": "completed",
+                "image_url": "https://i.imgur.com/lqzqw8g.jpeg"
+            },
+            {
+                "id": 3,
+                "name": "Barry",
+                "total_episodes": 32,
+                "current_episode": 0,
+                "status": "plan to watch",
+                "image_url": "https://static.vecteezy.com/system/resources/previews/004/141/669/original/no-photo-or-blank-image-icon-loading-images-or-missing-image-mark-image-not-available-or-image-coming-soon-sign-simple-nature-silhouette-in-frame-isolated-illustration-vector.jpg"
+            },
+            {
+                "id": 4,
+                "name": "Friends",
+                "total_episodes": 236,
+                "current_episode": 9,
+                "status": "on hold",
+                "image_url": "https://static.vecteezy.com/system/resources/previews/004/141/669/original/no-photo-or-blank-image-icon-loading-images-or-missing-image-mark-image-not-available-or-image-coming-soon-sign-simple-nature-silhouette-in-frame-isolated-illustration-vector.jpg"
+            }
+        ]
     }
 ]

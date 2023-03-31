@@ -11,5 +11,10 @@
 }
 
 .tile-name{
+    padding-top: 1rem;
+    font-size: small;
+}
+
+.tile-episodes{
     font-size: small;
 }

@@ -12,8 +12,8 @@ function Landing() {
           <UserInfo />
         </div>
         <div className="col">
-          <h1>Shows in Progress</h1>
-          <FilteredList status="on going" />
+          <h1>Shows List</h1>
+          <FilteredList status="On Going" />
         </div>
       </div>
     </div>

@@ -1,0 +1,10 @@
+.list{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+#status-options{
+    border-style: solid;
+    padding: 1rem;
+}
