@@ -1,14 +1,9 @@
 function getShowsCompleted(showList) {
-  let completedCount = 0;
-
-  if(showList){
-    showList.forEach((show) => {
-      if (show.status === "completed") {
-        completedCount++;
-      }
-    });
+  if(!showList){
+    return 0;
   }
-  return completedCount;
+  const showsCompleted = showList.filter((show) => show.status === "completed")
+  return showsCompleted.length;
 }
 
 export default getShowsCompleted;

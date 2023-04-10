@@ -6,19 +6,24 @@ import "./filteredList.css";
 
 function FilteredList({ status }) {
   const [showList, setShowList] = useState([]);
-  const user = getUserById(getParams("user_id"));
+  const [user, setUser] = useState([]);
+  const response = getUserById(getParams("user_id"));
   useEffect(() => {
-    const filteredList = user.showList.filter((show) => show.status === status.toLowerCase());
+    setUser(response);
+    const filteredList = response.showList.filter(
+      (show) => show.status === status.toLowerCase()
+    );
     setShowList(filteredList);
-  }, [user.showList, status]);
+  }, [user.showList, status, response]);
   return (
     <div>
       <h3>{showList.length > 0 ? status : ""}</h3>
       <div id="filtered-List" className="filtered-list-container">
         {showList.map((show) => {
+          const info = { user: user, showId: show.id };
           return (
             <div key={show.id}>
-              <ShowTile show={show} />
+              <ShowTile info={info} />
             </div>
           );
         })}

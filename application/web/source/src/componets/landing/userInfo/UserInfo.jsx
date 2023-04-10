@@ -3,6 +3,7 @@ import getShowsCompleted from "../getShowsCompleted";
 import getUserById from "../getUserById";
 import getParams from "../../../getParams";
 import "./userInfo.css";
+import getShowsInProgress from "../getShowsInProgress";
 
 function UserInfo() {
   const [user, setUser] = useState({});
@@ -11,20 +12,15 @@ function UserInfo() {
     setUser(getUserById(getParams("user_id")));
   }, []);
   return (
-    <div className="container border rounded">
-      <div>
-        <img
-          id="image-url"
-          className="img-circle row"
-          src={user.image_url}
-          alt="User Profile"
-          title="UserImage"
-        />
-        <h1 id="user-name" className="row align-text-center">{`Welcome, ${user.name}`}</h1>
-        <p id="total-shows-completed" className="row align-text-center">
-          {`Shows Completed: ${getShowsCompleted(user.showList)}`}
-        </p>
+    <div className="card" style={{ width: '18rem' }}>
+      <img className="card-img-top" src={user.image_url} alt="Card cap" />
+      <div className="card-body">
+        <h5 className="card-title">{`Welcome, ${user.name}`}</h5>
       </div>
+      <ul className="list-group list-group-flush">
+        <li className="list-group-item">{`Total shows in progress: ${getShowsInProgress(user.showList)}`}</li>
+        <li className="list-group-item">{`Total shows completed: ${getShowsCompleted(user.showList)}`}</li>
+      </ul>
     </div>
   );
 }

@@ -4,6 +4,11 @@
     flex-direction: row;
 }
 
+.image-button{
+    background: none;
+    border-style: none;
+}
+
 .tile-image{
     width: 100px;
     height: 150px;
