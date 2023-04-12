@@ -1,11 +1,10 @@
 package com.MediaTracker.UserService.Models;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 @Entity
+@Table(name = "user")
+@SecondaryTable(name = "list", pkJoinColumns = @PrimaryKeyJoinColumn(name = "user_user_id"))
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -14,6 +13,9 @@ public class User {
     private String email;
     private String password;
     private String image_url;
+
+    public User() {
+    }
 
     public User(Integer user_id, String user_name, String email, String password, String image_url) {
         this.user_id = user_id;
