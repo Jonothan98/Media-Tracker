@@ -1,35 +1,27 @@
 package com.MediaTracker.UserService.Controllers;
 
 import com.MediaTracker.UserService.Models.ShowList;
-import com.MediaTracker.UserService.Repository.ShowListRepository;
+import com.MediaTracker.UserService.Service.ShowListService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @RestController
-public class ListController {
+public class ShowListController {
 
     @Autowired
-    ShowListRepository showListRepository;
+    ShowListService showListService;
 
     @GetMapping("/list")
     public List<ShowList> getAll() {
-        return showListRepository.findAll();
+        return showListService.getAll();
     }
 
     @GetMapping("/list/{id}")
     public List<ShowList> getByUserId(@PathVariable int id) {
-        List<ShowList> showLists = showListRepository.findAll();
-        List<ShowList> listToReturn = new ArrayList<>();
-        for (ShowList show : showLists) {
-            if (show.getUser_id() == id) {
-                listToReturn.add(show);
-            }
-        }
-        return listToReturn;
+        return showListService.getListByUserId(id);
     }
 }

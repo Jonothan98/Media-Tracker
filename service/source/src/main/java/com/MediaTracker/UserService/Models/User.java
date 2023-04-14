@@ -1,6 +1,6 @@
 package com.MediaTracker.UserService.Models;
 
-import jakarta.persistence.*;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "user")
