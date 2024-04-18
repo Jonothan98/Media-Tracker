@@ -14,6 +14,7 @@ public class User {
     private String email;
     private String password;
     private String image_url;
+    private MediaList mediaList;
 
     public User(Integer user_id, String user_name, String email, String password, String image_url) {
         this.user_id = user_id;

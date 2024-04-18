@@ -3,7 +3,7 @@ package com.MediaTracker.UserService.Models;
 import jakarta.persistence.*;
 
 @Entity
-public class list {
+public class MediaList {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer show_id;
