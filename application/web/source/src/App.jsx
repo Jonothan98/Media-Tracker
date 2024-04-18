@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Landing from "./componets/landing/Landing";
+import Landing from "./componets/landing/landing";
 import ListView from "./componets/listView/List";
 import Navbar from "./componets/navbar/Navbar";
 import ShowDetails from "./componets/showDetails/ShowDetails";
