@@ -1,4 +1,4 @@
-package com.MediaTracker.UserService.Models.MediaItems;
+package com.MediaTracker.UserService.Models;
 
 import jakarta.persistence.*;
 

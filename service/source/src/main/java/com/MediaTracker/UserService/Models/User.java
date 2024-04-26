@@ -1,9 +1,5 @@
 package com.MediaTracker.UserService.Models;
 
-import com.MediaTracker.UserService.Models.MediaItems.BookItem;
-import com.MediaTracker.UserService.Models.MediaItems.GameItem;
-import com.MediaTracker.UserService.Models.MediaItems.MovieItem;
-import com.MediaTracker.UserService.Models.MediaItems.ShowItem;
 import jakarta.persistence.*;
 
 import java.util.List;
