@@ -1,6 +1,7 @@
 package com.MediaTracker.UserService.Models;
 
 import jakarta.persistence.*;
+import org.springframework.lang.NonNull;
 
 import java.util.List;
 
@@ -12,82 +13,27 @@ public class User {
     @Column(name = "ID")
     private Long user_id;
 
-    @Column(name = "NAME")
+    @Column(name = "name", nullable = false)
     private String user_name;
 
-    @Column(name = "EMAIL")
+    @Column(name = "email", nullable = false)
     private String email;
-    @Column(name = "PASSWORD")
+    @Column(name = "password", nullable = false)
     private String password;
 
-    @Column(name = "IMAGE_URL")
+    @Column(name = "image_url",nullable = false)
     private String image_url;
 
-    @OneToMany(cascade = CascadeType.ALL)
-    @Column(name = "SHOW_LIST")
-    @JoinColumn(name = "fk_ID", referencedColumnName = "ID")
-    private List<ShowItem> showItem;
 
-    @OneToMany(cascade = CascadeType.ALL)
-    @Column(name = "BOOK_LIST")
-    @JoinColumn(name = "fk_ID", referencedColumnName = "ID")
-    private List<BookItem> bookItem;
-
-    @OneToMany(cascade = CascadeType.ALL)
-    @Column(name = "MOVIE_LIST")
-    @JoinColumn(name = "fk_ID", referencedColumnName = "ID")
-    private List<MovieItem> movieItem;
-
-    @OneToMany(cascade = CascadeType.ALL)
-    @Column(name = "GAME_LIST")
-    @JoinColumn(name = "fk_ID", referencedColumnName = "ID")
-    private List<GameItem> gameItem;
-
-    public User(Long user_id, String user_name, String email, String password, String image_url, List<ShowItem> showItem, List<BookItem> bookItem, List<MovieItem> movieItem, List<GameItem> gameItem) {
+    public User(Long user_id, String user_name, String email, String password, String image_url) {
         this.user_id = user_id;
         this.user_name = user_name;
         this.email = email;
         this.password = password;
         this.image_url = image_url;
-        this.showItem = showItem;
-        this.bookItem = bookItem;
-        this.movieItem = movieItem;
-        this.gameItem = gameItem;
     }
 
     public User() {
-    }
-
-    public List<ShowItem> getShowItem() {
-        return showItem;
-    }
-
-    public void setShowItem(List<ShowItem> showItem) {
-        this.showItem = showItem;
-    }
-
-    public List<BookItem> getBookItem() {
-        return bookItem;
-    }
-
-    public void setBookItem(List<BookItem> bookItem) {
-        this.bookItem = bookItem;
-    }
-
-    public List<MovieItem> getMovieItem() {
-        return movieItem;
-    }
-
-    public void setMovieItem(List<MovieItem> movieItem) {
-        this.movieItem = movieItem;
-    }
-
-    public List<GameItem> getGameItem() {
-        return gameItem;
-    }
-
-    public void setGameItem(List<GameItem> gameItem) {
-        this.gameItem = gameItem;
     }
 
     public Long getUser_id() {

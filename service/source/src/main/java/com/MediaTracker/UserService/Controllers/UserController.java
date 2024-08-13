@@ -1,54 +1,40 @@
 package com.MediaTracker.UserService.Controllers;
 
 import com.MediaTracker.UserService.Models.User;
-import com.MediaTracker.UserService.Repository.UserRepository;
+import com.MediaTracker.UserService.Services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
+import java.util.Collection;
 import java.util.Optional;
 
 @RestController
 public class UserController {
     @Autowired
-    UserRepository userRepository;
+    UserService userService;
 
     @GetMapping("/user")
-    public List<User> getAll(){
-        return userRepository.findAll();
+    public Collection<User> getAll() {
+        return userService.getAllUsers();
     }
 
     @GetMapping("/user/{id}")
-    Optional<User> getUser(@PathVariable int id) {
-        try {
-            return userRepository.findById(id);
-        } catch (Exception e) {
-            throw new RuntimeException("Failed for find user by ID" + e.getMessage());
-        }
+    Optional<User> getUser(@PathVariable String id) {
+        return userService.getUserById(id);
     }
 
     @PostMapping("/user")
-    User newUser(@RequestBody User user){
-        return userRepository.save(user);
+    void newUser(@RequestBody User user) {
+        userService.newUser(user);
     }
 
     @PutMapping("/user/{id}")
-    User updateUser(@RequestBody User newUser, @PathVariable Long id){
-        return userRepository.findById(Math.toIntExact(id)).map(
-                user -> {
-                    user.setUser_name(newUser.getUser_name());
-                    user.setEmail(newUser.getEmail());
-                    user.setPassword(newUser.getPassword());
-                    user.setImage_url(newUser.getImage_url());
-                    return userRepository.save(user);
-                }).orElseGet(() -> {
-                    newUser.setUser_id(id);
-                    return userRepository.save(newUser);
-        });
+    void updateUser(@RequestBody User newUser, @PathVariable Long id) {
+        userService.updateUser(id, newUser);
     }
 
     @DeleteMapping("/user/{id}")
-    void deleteUser(@PathVariable int id){
-        userRepository.deleteById(id);
+    void deleteUser(@PathVariable Long id) {
+        userService.deleteUser(id);
     }
 }
