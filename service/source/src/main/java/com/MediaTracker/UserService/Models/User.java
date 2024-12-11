@@ -24,6 +24,9 @@ public class User {
     @Column(name = "image_url",nullable = false)
     private String image_url;
 
+    @JoinColumn(name = "createdAt")
+    private int createdAt;
+
 
     public User(Long user_id, String user_name, String email, String password, String image_url) {
         this.user_id = user_id;

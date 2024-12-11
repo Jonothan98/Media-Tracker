@@ -8,14 +8,16 @@ import java.util.List;
 public class UserList {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "list_id")
+    @Column(name = "id")
     private Long user_list_id;
-
-    @OneToMany(cascade = CascadeType.ALL)
+    
     @JoinColumn(name = "show_id")
-    private List<ShowItem> showItem;
+    private int show_id;
 
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "user_id")
     private User user;
+
+    @JoinColumn(name = "updateAt")
+    private int updatedAt;
 }
